@@ -1,0 +1,175 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 32px auto 12px;
+  padding: 20px 12px 0;
+}
+
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  width: 100%;
+}
+
+.pageNumber,
+.goldLink,
+.searchButton {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 0 12px;
+  border: 1px solid #ded7ca;
+  border-radius: 5px;
+  font: inherit;
+  font-size: 13px;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color 200ms ease,
+    border-color 200ms ease,
+    color 200ms ease;
+}
+
+.pageNumber {
+  min-width: 38px;
+  background: #fff;
+  color: #17334a;
+}
+
+.pageNumber:hover {
+  border-color: #b49a61;
+  background: #f0ebe2;
+}
+
+.activePage,
+.activePage:hover {
+  border-color: #17334a;
+  background: #17334a;
+  color: #fff;
+}
+
+.goldLink,
+.searchButton {
+  border-color: #d8b36a;
+  background: #d8b36a;
+  color: #fff;
+  font-weight: 500;
+}
+
+.goldLink:hover:not(:disabled),
+.searchButton:hover {
+  border-color: #c49a4d;
+  background: #c49a4d;
+  color: #fff;
+}
+
+.goldLink:disabled {
+  cursor: not-allowed;
+  opacity: 0.48;
+}
+
+.pageDots {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 38px;
+  color: #827b70;
+  font-size: 15px;
+  letter-spacing: 2px;
+}
+
+.pageSearch {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  margin: 0;
+  padding-top: 14px;
+  border-top: 1px solid #e8e1d5;
+  color: #17334a;
+  font-size: 13px;
+}
+
+.searchControls {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.pageSearch input {
+  width: 58px;
+  height: 36px;
+  box-sizing: border-box;
+  border: 1px solid #ded7ca;
+  border-radius: 5px;
+  padding: 0 8px;
+  background: #fff;
+  color: #17334a;
+  font: inherit;
+}
+
+.pageSearch input:focus-visible,
+.pageNumber:focus-visible,
+.goldLink:focus-visible,
+.searchButton:focus-visible {
+  outline: 2px solid #17334a;
+  outline-offset: 2px;
+}
+
+.pageHelp {
+  color: #827b70;
+}
+
+.searchButton {
+  min-height: 36px;
+  padding: 0 13px;
+  background: #17334a;
+  border-color: #17334a;
+}
+
+.searchButton:hover {
+  background: #244a66;
+  border-color: #244a66;
+}
+
+@media (max-width: 650px) {
+  .wrapper {
+    padding-right: 4px;
+    padding-left: 4px;
+    gap: 12px;
+  }
+
+  .pagination {
+    gap: 5px;
+  }
+
+  .pageNumber,
+  .goldLink {
+    min-height: 35px;
+    padding: 0 8px;
+    font-size: 12px;
+  }
+
+  .pageNumber {
+    min-width: 32px;
+  }
+
+  .pageSearch {
+    gap: 8px;
+  }
+}

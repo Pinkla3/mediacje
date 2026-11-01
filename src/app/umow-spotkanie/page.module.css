@@ -1,0 +1,36 @@
+.page {
+  min-height: 100vh;
+  background: var(--cream);
+}
+
+.container {
+  width: calc(100% - 80px);
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.contactLayout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  align-items: start;
+  gap: 55px;
+  padding: 65px 0 20px;
+}
+
+@media (max-width: 850px) {
+  .container {
+    width: calc(100% - 40px);
+  }
+
+  .contactLayout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+    padding-top: 35px;
+  }
+}
+
+@media (max-width: 650px) {
+  .container {
+    width: calc(100% - 30px);
+  }
+}

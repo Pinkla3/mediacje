@@ -1,0 +1,246 @@
+.page {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  padding: clamp(32px, 5vh, 64px) 24px;
+  background: var(--cream, #f8f5ef);
+  text-align: center;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 900px);
+  margin: auto;
+}
+
+.code {
+  display: block;
+  color: var(--gold, #c89a4b);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(92px, 13vw, 160px);
+  font-weight: 400;
+  line-height: 0.9;
+  letter-spacing: -0.06em;
+}
+
+.eyebrow {
+  margin: 18px 0 0;
+  color: var(--gold-dark, #a8782f);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.32em;
+}
+
+.ornament {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: min(100%, 700px);
+  height: 38px;
+  margin: 18px auto 24px;
+}
+
+.ornament::before,
+.ornament::after {
+  position: absolute;
+  top: 50%;
+  width: calc(50% - 17px);
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--gold-light, #e4c98f)
+  );
+  content: "";
+}
+
+.ornament::before {
+  left: 0;
+}
+
+.ornament::after {
+  right: 0;
+  transform: scaleX(-1);
+}
+
+.ornament span {
+  width: 12px;
+  height: 12px;
+  background: var(--gold, #c89a4b);
+  transform: rotate(45deg);
+}
+
+.content h1 {
+  margin: 0 0 18px;
+  color: var(--navy, #111827);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(32px, 4.2vw, 56px);
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+}
+
+.description {
+  max-width: 560px;
+  margin: 0 auto 28px;
+  color: var(--text-muted, #66615a);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(16px, 1.5vw, 19px);
+  line-height: 1.75;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
+.button,
+.secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 0 24px;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease;
+}
+
+.button {
+  border: 1px solid var(--gold, #c89a4b);
+  background: var(--gold, #c89a4b);
+  color: var(--white, #fff);
+}
+
+.button:hover {
+  border-color: var(--gold-dark, #a8782f);
+  background: var(--gold-dark, #a8782f);
+  transform: translateY(-1px);
+}
+
+.secondaryButton {
+  border: 1px solid var(--border, #e3dacb);
+  background: transparent;
+  color: var(--navy, #111827);
+}
+
+.secondaryButton:hover {
+  background: var(--cream-dark, #eee6d8);
+}
+
+.button:focus-visible,
+.secondaryButton:focus-visible {
+  outline: 2px solid var(--navy, #111827);
+  outline-offset: 4px;
+}
+
+.decor {
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  width: clamp(240px, 29vw, 430px);
+  aspect-ratio: 1;
+  border: 1px solid rgb(200 154 75 / 28%);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+
+.decor::before {
+  position: absolute;
+  inset: 17%;
+  border: 1px solid rgb(200 154 75 / 20%);
+  border-radius: 50%;
+  content: "";
+}
+
+.decorLeft {
+  left: 0;
+  transform: translate(-58%, -50%);
+}
+
+.decorRight {
+  right: 0;
+  transform: translate(58%, -50%);
+}
+
+@media (max-width: 800px) {
+  .page {
+    padding: 40px 24px;
+  }
+
+  .decor {
+    width: 280px;
+    opacity: 0.5;
+  }
+}
+
+@media (max-width: 520px) {
+  .page {
+    padding: 36px 20px;
+  }
+
+  .code {
+    font-size: clamp(88px, 26vw, 124px);
+  }
+
+  .eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.25em;
+  }
+
+  .ornament {
+    margin: 16px auto 20px;
+  }
+
+  .content h1 {
+    font-size: clamp(30px, 8vw, 40px);
+  }
+
+  .description {
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .button,
+  .secondaryButton {
+    width: 100%;
+    max-width: 340px;
+  }
+
+  .decor {
+    width: 210px;
+    opacity: 0.35;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button,
+  .secondaryButton {
+    transition: none;
+  }
+}

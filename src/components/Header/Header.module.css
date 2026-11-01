@@ -1,0 +1,293 @@
+.header {
+  width: 100%;
+  background-color: var(--cream);
+  border-bottom: 1px solid var(--border);
+}
+
+.container {
+  width: calc(100% - 64px);
+  max-width: 1600px;
+  min-height: 84px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 36px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.logoIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 46px;
+  height: 46px;
+  color: var(--gold);
+}
+
+.logoIcon svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.logoText {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.logoText strong {
+  color: var(--navy);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  line-height: 1;
+}
+
+.logoText small {
+  display: block;
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 7px;
+  letter-spacing: 1.7px;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-left: auto;
+}
+
+.navigation a {
+  position: relative;
+  color: #343944;
+  font-size: 14px;
+  font-weight: 400;
+  transition: color 0.2s ease;
+}
+
+.navigation a {
+  position: relative;
+
+  color: var(--navy);
+  font-size: 14px;
+  font-weight: 500;
+
+  transition: color 0.2s ease;
+}
+
+.navigation a:hover {
+  color: var(--gold-dark);
+}
+
+.appointmentButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-shrink: 0;
+
+  padding: 16px 24px;
+
+  background-color: var(--gold);
+  color: var(--white);
+
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.appointmentButton:hover {
+  background-color: var(--gold-dark);
+  transform: translateY(-1px);
+}
+
+.appointmentButton span {
+  font-size: 18px;
+}
+
+.menuButton {
+  display: none;
+
+  border: 0;
+  background: transparent;
+  color: var(--navy);
+
+  font-size: 26px;
+  padding: 5px;
+}
+
+/* Tablet */
+
+@media (max-width: 900px) {
+  .container {
+  width: calc(100% - 36px);
+  gap: 18px;
+}
+  .navigation {
+    gap: 18px;
+  }
+
+  .navigation a {
+    font-size: 12px;
+  }
+
+  .appointmentButton {
+    padding: 12px 16px;
+    font-size: 11px;
+  }
+}
+
+
+/* Telefon */
+
+.mobileNavigation {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .container {
+    width: calc(100% - 36px);
+    gap: 18px;
+  }
+
+  .navigation {
+    gap: 18px;
+  }
+
+  .navigation a {
+    font-size: 12px;
+  }
+
+  .appointmentButton {
+    padding: 12px 16px;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 700px) {
+  .container {
+    width: calc(100% - 32px);
+    min-height: 68px;
+  }
+
+  .navigation,
+  .appointmentButton {
+    display: none;
+  }
+
+  .menuButton {
+    display: block;
+  }
+
+  .logoText strong {
+    font-size: 16px;
+  }
+
+  .logoText small {
+    font-size: 7px;
+  }
+
+  .logoIcon {
+    width: 46px;
+    height: 46px;
+  }
+
+.mobileNavigation {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 8px 24px 20px;
+  background: var(--cream);
+  border-top: 1px solid var(--border);
+
+  max-height: 0;
+  overflow: hidden;
+  padding-top: 0;
+  padding-bottom: 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-12px);
+
+transition:
+  max-height 0.6s ease-in-out,
+  padding 0.6s ease-in-out,
+  opacity 0.4s ease,
+  transform 0.6s ease-in-out,
+  visibility 0.6s ease-in-out;
+}
+
+.mobileNavigationOpen {
+  max-height: 400px;
+  padding-top: 8px;
+  padding-bottom: 20px;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.mobileNavigation a {
+  display: block;
+  padding: 14px 0;
+  color: var(--navy);
+  font-size: 15px;
+  line-height: 1.5;
+  text-decoration: none;
+  border-bottom: 1px solid var(--border);
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.mobileNavigation a:hover {
+  color: var(--gold-dark);
+}
+
+
+.mobileNavigation .mobileAppointment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  box-sizing: border-box;
+  width: 100%;
+  gap: 12px;
+
+  margin-top: 16px;
+  padding: 14px 18px;
+
+  background-color: var(--gold);
+  color: var(--white);
+  border-bottom: none;
+
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+
+  transition:
+    background-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.mobileNavigation .mobileAppointment:hover {
+  background-color: var(--gold-dark);
+  color: var(--white);
+}
+}

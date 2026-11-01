@@ -1,0 +1,218 @@
+.section {
+  display: grid;
+  grid-template-columns: minmax(0, 0.7fr) minmax(0, 0.3fr);
+  align-items: stretch;
+  column-gap: 0;
+  row-gap: 0;
+  padding: 30px 0 40px;
+}
+
+/* Panel informacyjny */
+
+.infoPanel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+  padding: 30px;
+  background: var(--cream-dark);
+}
+
+.infoPanel h2 {
+  position: relative;
+  width: fit-content;
+  margin: 0 0 34px;
+  padding-bottom: 14px;
+  color: var(--navy);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(26px, 2.5vw, 34px);
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.infoPanel h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 44px;
+  height: 2px;
+  background: var(--gold);
+}
+
+/* Opcje spotkania */
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 0;
+}
+
+.icon {
+  display: flex;
+  flex: 0 0 44px;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  color: var(--gold-dark);
+}
+
+.icon svg {
+  display: block;
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.optionText {
+  min-width: 0;
+}
+
+.optionText h3 {
+  margin: 0 0 5px;
+  color: var(--navy);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.4;
+  transition: color 0.22s ease;
+}
+
+.option:hover .optionText h3 {
+  color: #805315;
+}
+
+.option:hover .icon {
+  color: #805315;
+  border-color: #805315;
+  background: rgba(128, 83, 21, 0.10);
+  transition:
+    color 0.22s ease,
+    border-color 0.22s ease,
+    background-color 0.22s ease;
+}
+
+.optionText p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* Mapa po lewej na desktopie */
+
+.mapLink {
+  order: -1;
+
+  position: relative;
+  display: block;
+  min-width: 0;
+  min-height: 320px;
+  overflow: hidden;
+  background: var(--cream-dark);
+  text-decoration: none;
+}
+
+.mapConsentNotice {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 320px;
+  padding: 32px;
+  color: var(--text-muted);
+  font-size: 14px;
+  line-height: 1.8;
+  text-align: center;
+}
+
+.map {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  border: 0;
+  pointer-events: none;
+}
+
+.mapOverlay {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: var(--white);
+  color: var(--navy);
+  font-size: 12px;
+  box-shadow: 0 2px 12px rgb(0 0 0 / 10%);
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.mapLink:hover .mapOverlay {
+  background: var(--gold);
+  color: var(--white);
+}
+
+/* Tablet */
+@media (max-width: 850px) {
+  .section {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+    padding: 25px 0 35px;
+  }
+
+  /* Mapa jako pierwsza, panel pod nią */
+  .mapLink {
+    order: 1;
+    min-height: 300px;
+  }
+
+  .infoPanel {
+    order: 2;
+    padding: 28px;
+  }
+}
+
+/* Telefon */
+@media (max-width: 600px) {
+  .section {
+    gap: 16px;
+    padding: 20px 0 30px;
+  }
+
+  .mapLink {
+    min-height: 250px;
+  }
+
+  .infoPanel {
+    padding: 24px 20px;
+  }
+
+  .infoPanel h2 {
+    margin-bottom: 22px;
+    font-size: 28px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .optionText h3 {
+    transition: none;
+  }
+}

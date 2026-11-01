@@ -1,0 +1,345 @@
+.hero {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 500px;
+
+  background-color: var(--navy);
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 145px;
+
+  pointer-events: none;
+  opacity: 0.24;
+
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='145' height='500' viewBox='0 0 145 500'%3E%3Cg fill='none' stroke='%23c99b4a' stroke-width='0.65' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M30 0 L30 500'/%3E%3Cpath d='M30 55 L82 105 L30 155 Z'/%3E%3Cpath d='M30 115 L108 190 L30 265 Z'/%3E%3Cpath d='M30 225 L82 275 L30 325 Z'/%3E%3Cpath d='M30 285 L112 365 L30 445 Z'/%3E%3C/g%3E%3C/svg%3E");
+
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 145px 500px;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(17, 24, 39, 1) 0%,
+      rgba(17, 24, 39, 0.98) 38%,
+      rgba(17, 24, 39, 0.88) 46%,
+      rgba(17, 24, 39, 0.55) 55%,
+      rgba(17, 24, 39, 0.15) 64%,
+      rgba(17, 24, 39, 0) 72%
+    );
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px max(48px, calc((100vw - 1350px) / 2));
+  color: var(--white);
+  min-width: 0;
+}
+
+.eyebrow {
+  margin: 0 0 20px;
+
+  color: var(--gold-light);
+
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+}
+
+.eyebrow span {
+  margin: 0 7px;
+  color: var(--gold);
+}
+
+.content h1 {
+  max-width: 700px;
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(48px, 4.2vw, 64px);
+  font-weight: 400;
+  line-height: 0.98;
+  letter-spacing: -2px;
+}
+
+.content h1 span {
+  display: block;
+  color: var(--gold-light);
+}
+
+.description {
+  max-width: 520px;
+
+  margin: 28px 0 0;
+
+  color: #e8e5df;
+
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  margin-top: 36px;
+}
+
+.primaryButton,
+.secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+
+  min-height: 52px;
+  padding: 0 26px;
+
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.primaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+
+  min-height: 52px;
+  padding: 0 26px;
+
+  background-color: var(--gold);
+  color: var(--white);
+  border: 1px solid var(--gold);
+
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.primaryButton:hover {
+  background-color: var(--gold-dark);
+  border-color: var(--gold-dark);
+  transform: translateY(-2px);
+}
+
+.secondaryButton {
+  border: 1px solid var(--gold);
+  color: var(--white);
+}
+
+.secondaryButton:hover {
+  background-color: var(--gold);
+  color: var(--navy);
+}
+
+.imageWrapper {
+  position: relative;
+  z-index: 0;
+  min-height: 500px;
+  overflow: hidden;
+}
+
+.heroImage {
+  object-fit: cover;
+  object-position: 48% center;
+}
+
+/* Gradient między granatem a zdjęciem */
+.imageGradient {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    var(--navy) 0%,
+    rgba(15, 32, 48, 0.92) 8%,
+    rgba(15, 32, 48, 0.55) 22%,
+    rgba(15, 32, 48, 0.15) 38%,
+    transparent 52%
+  );
+}
+
+
+
+.imageWrapper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(17, 24, 39, 0.22),
+    transparent 55%
+  );
+  pointer-events: none;
+}
+
+.imagePlaceholder {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+  min-height: 560px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      #8c765c 0%,
+      #d8c4a5 45%,
+      #655542 100%
+    );
+
+  color: var(--white);
+  text-align: center;
+}
+
+.imagePlaceholder::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(17, 24, 39, 0.25),
+      transparent 60%
+    );
+}
+
+.imagePlaceholder span,
+.imagePlaceholder small {
+  position: relative;
+  z-index: 1;
+}
+
+.imagePlaceholder span {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 28px;
+}
+
+.imagePlaceholder small {
+  margin-top: 8px;
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+/* Tablet */
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .content {
+    padding: 70px 40px;
+  }
+
+.imageWrapper {
+  min-height: 420px;
+}
+}
+
+/* Telefon */
+
+@media (max-width: 700px) {
+  .hero::before,
+  .hero::after,
+  .imageGradient,
+  .imageWrapper::after {
+    display: none !important;
+    background: none !important;
+     content: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero::before,
+  .hero::after,
+  .imageGradient,
+  .imageWrapper::after {
+    display: none !important;
+    background: none !important;
+  }
+}
+
+@media (max-width: 700px) {
+  .content {
+    padding: 56px 24px;
+  }
+
+  .eyebrow {
+    font-size: 10px;
+    letter-spacing: 1.8px;
+  }
+
+  .content h1 {
+    font-size: clamp(44px, 12vw, 58px);
+    letter-spacing: -1.5px;
+  }
+
+  .description {
+    margin-top: 22px;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+    margin-top: 28px;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+  }
+
+.imageWrapper {
+  min-height: 320px;
+}
+}

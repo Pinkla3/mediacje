@@ -1,0 +1,253 @@
+.section {
+  padding: 25px 0;
+}
+
+/* Nagłówek z krótkimi, symetrycznymi liniami */
+.eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: min(100%, 320px);
+  margin: 0 auto 18px;
+  color: var(--gold-dark);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2.3px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+.eyebrow::before,
+.eyebrow::after {
+  content: "";
+  display: block;
+  flex: 1 1 32px;
+  max-width: 42px;
+  height: 1px;
+  background: var(--gold);
+  opacity: 0.8;
+}
+
+.section h2 {
+  max-width: 320px;
+  margin: 0 auto 16px;
+  color: var(--navy);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(30px, 3vw, 42px);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.intro {
+  max-width: 320px;
+  margin: 0 auto 32px;
+  color: var(--text-muted);
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+.contactList {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: min(100%, 320px);
+  margin: 0 auto;
+}
+
+.contactItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  min-width: 0;
+}
+
+.icon {
+  display: flex;
+  flex: 0 0 46px;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  color: var(--gold-dark);
+  background: transparent;
+  transition:
+    color 0.22s ease,
+    border-color 0.22s ease,
+    background-color 0.22s ease,
+    transform 0.22s ease;
+}
+
+.contactItem {
+  transition: color 0.22s ease;
+}
+
+.contactItem:hover .icon {
+  color: #805315;
+  border-color: #805315;
+  background: rgba(128, 83, 21, 0.10);
+  transform: translateY(-2px);
+}
+
+.icon svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.details {
+  min-width: 0;
+  padding-top: 1px;
+}
+
+.details h3 {
+  margin: 0 0 5px;
+  color: var(--navy);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 19px;
+  font-weight: 400;
+  line-height: 1.35;
+  transition: color 0.22s ease;
+}
+
+.contactItem:hover .details h3 {
+  color: #805315;
+}
+
+.details p {
+  margin: 0 0 6px;
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.value {
+  display: inline-block;
+  color: var(--gold-dark);
+  font-size: 13px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+a.value {
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a.value span {
+  display: inline-block;
+  margin-left: 5px;
+  transition: transform 0.2s ease;
+}
+
+a.value:hover {
+  color: var(--navy);
+}
+
+a.value:hover span {
+  transform: translateX(4px);
+}
+
+.link {
+  display: inline-block;
+  margin-top: 1px;
+  color: var(--navy);
+  font-size: 13px;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.link:hover {
+  color: var(--gold-dark);
+}
+
+@media (max-width: 850px) {
+  .section {
+    padding: 10px 0 20px;
+  }
+
+  .section h2,
+  .intro {
+    max-width: 600px;
+  }
+
+  .contactList {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px 20px;
+    width: 100%;
+  }
+
+  .eyebrow {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 550px) {
+  .section {
+    padding: 10px 0 20px;
+  }
+
+  .eyebrow {
+    width: min(100%, 320px);
+    gap: 9px;
+    letter-spacing: 2px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .eyebrow::before,
+  .eyebrow::after {
+    max-width: 30px;
+  }
+
+  .section h2 {
+    font-size: 32px;
+  }
+
+  .intro {
+    margin-bottom: 28px;
+  }
+
+  .contactList {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 22px;
+    width: min(100%, 360px);
+  }
+
+  .contactItem {
+    gap: 14px;
+  }
+
+  .icon {
+    flex-basis: 44px;
+    width: 44px;
+    height: 44px;
+  }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  .icon,
+  .contactItem {
+    transition: none;
+  }
+
+  .contactItem:hover .icon {
+    transform: none;
+  }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  .details h3 {
+    transition: none;
+  }
+}
