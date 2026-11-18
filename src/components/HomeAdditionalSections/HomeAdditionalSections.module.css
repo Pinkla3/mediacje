@@ -1755,3 +1755,34 @@
     line-height: 1.55;
   }
 }
+
+
+/* Układ końcowy: opinie i współpraca obok siebie na desktopie,
+   jedna pod drugą na tabletach i telefonach. */
+@media (min-width: 821px) {
+  .reviewsPartnersGrid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 1px minmax(0, 1fr);
+    align-items: start;
+    gap: clamp(28px, 3.2vw, 54px);
+    max-width: 1420px;
+  }
+
+  .sectionDivider {
+    display: block;
+    width: 1px;
+    min-height: 390px;
+    align-self: stretch;
+  }
+}
+
+@media (max-width: 820px) {
+  .reviewsPartnersGrid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 42px;
+  }
+
+  .sectionDivider {
+    display: none;
+  }
+}
