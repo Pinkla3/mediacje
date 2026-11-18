@@ -1,17 +1,9 @@
 import styles from "./page.module.css";
 
-const placeholders = {
-  administrator: "[UZUPEŁNIJ: imię i nazwisko mediatora]",
-  company: "[UZUPEŁNIJ: pełna nazwa działalności]",
-  address: "[UZUPEŁNIJ: adres działalności]",
-  email: "[UZUPEŁNIJ: adres e-mail]",
-  nip: "[UZUPEŁNIJ: NIP]",
-};
-
 export const metadata = {
   title: "Polityka prywatności | Mediacje",
   description:
-    "Polityka prywatności serwisu internetowego poświęconego usługom mediacyjnym.",
+    "Informacje o przetwarzaniu danych osobowych podczas korzystania z serwisu internetowego.",
 };
 
 export default function PrivacyPolicyPage() {
@@ -20,15 +12,11 @@ export default function PrivacyPolicyPage() {
       <header className={styles.hero}>
         <div className={styles.heroContent}>
           <p className={styles.eyebrow}>INFORMACJE PRAWNE</p>
-
           <h1>Polityka prywatności</h1>
-
           <div className={styles.goldLine} />
-
           <p className={styles.intro}>
-            Twoja prywatność ma znaczenie. Dowiedz się, jak
-            przetwarzamy i chronimy dane osobowe podczas korzystania
-            z naszej strony internetowej.
+            Informacje o tym, kto przetwarza Twoje dane osobowe, w jakich
+            celach, na jakiej podstawie i jakie prawa Ci przysługują.
           </p>
         </div>
 
@@ -41,197 +29,227 @@ export default function PrivacyPolicyPage() {
       </header>
 
       <article className={styles.document}>
-        <div className={styles.notice}>
-          <strong>Wersja robocza dokumentu</strong>
-          <p>
-            Czerwone oznaczenia wskazują informacje wymagające
-            uzupełnienia lub weryfikacji przed publikacją.
-          </p>
-        </div>
-
         <section className={styles.section}>
           <h2>1. Administrator danych osobowych</h2>
           <p>Administratorem danych osobowych jest:</p>
-
           <ul>
             <li>
-              <strong>Imię i nazwisko: </strong>
-              <span className={styles.placeholder}>
-                {placeholders.administrator}
-              </span>
+              <strong>Imię i nazwisko:</strong> Beata Walczakiewicz
             </li>
             <li>
-              <strong>Nazwa działalności: </strong>
-              <span className={styles.placeholder}>
-                {placeholders.company}
-              </span>
+              <strong>Nazwa działalności:</strong> Legal and Art Support
+              Radca Prawny i Mediator Beata Walczakiewicz
             </li>
             <li>
-              <strong>Adres: </strong>
-              <span className={styles.placeholder}>
-                {placeholders.address}
-              </span>
+              <strong>Adres do doręczeń:</strong> ul. Orawska 23/45,
+              70-131 Szczecin
             </li>
             <li>
-              <strong>NIP: </strong>
-              <span className={styles.placeholder}>
-                {placeholders.nip}
-              </span>
+              <strong>NIP:</strong> 8513142092
             </li>
             <li>
-              <strong>Adres e-mail: </strong>
-              <span className={styles.placeholder}>
-                {placeholders.email}
-              </span>
+              <strong>REGON:</strong> 521151684
+            </li>
+            <li>
+              <strong>E-mail:</strong>{" "}
+              <a href="mailto:b.walczakiewicz@gmail.com">
+                b.walczakiewicz@gmail.com
+              </a>
+            </li>
+            <li>
+              <strong>Telefon:</strong>{" "}
+              <a href="tel:+48669422091">+48 669 422 091</a>
             </li>
           </ul>
-
           <p>
             W sprawach dotyczących przetwarzania danych osobowych można
-            kontaktować się z administratorem za pośrednictwem wskazanego
-            adresu e-mail.
+            skontaktować się z administratorem za pośrednictwem poczty
+            elektronicznej lub telefonicznie.
           </p>
         </section>
 
         <section className={styles.section}>
-          <h2>2. Zakres i cele przetwarzania danych</h2>
-
+          <h2>2. Jakie dane są przetwarzane i w jakich celach?</h2>
           <p>
-            Dane osobowe mogą być przetwarzane w związku z korzystaniem
-            ze strony internetowej, w szczególności podczas kontaktu
-            z administratorem za pomocą formularza kontaktowego.
+            Zakres przetwarzanych danych zależy od sposobu korzystania ze
+            strony i kontaktu z administratorem. Mogą to być w szczególności
+            dane identyfikacyjne i kontaktowe, takie jak imię, nazwisko,
+            adres e-mail i numer telefonu, a także informacje zawarte
+            w treści przesłanej wiadomości.
           </p>
-
-          <p>W zależności od sytuacji dane mogą być przetwarzane w celu:</p>
-
+          <p>Dane są przetwarzane w celu:</p>
           <ul>
-            <li>udzielenia odpowiedzi na otrzymaną wiadomość;</li>
+            <li>udzielenia odpowiedzi na otrzymane zapytanie;</li>
             <li>prowadzenia korespondencji dotyczącej mediacji;</li>
             <li>
-              podjęcia działań przed zawarciem umowy lub wykonania umowy;
+              podjęcia działań przed zawarciem umowy lub wykonania zawartej
+              umowy;
             </li>
-            <li>wypełnienia obowiązków prawnych administratora;</li>
+            <li>wypełnienia obowiązków wynikających z przepisów prawa;</li>
             <li>
               ustalenia, dochodzenia lub obrony przed ewentualnymi
               roszczeniami;
             </li>
             <li>
-              prowadzenia statystyk i analiz, jeżeli użytkownik wyraził
-              wymaganą zgodę na stosowanie odpowiednich technologii.
+              zapewnienia bezpieczeństwa i prawidłowego działania strony;
+            </li>
+            <li>
+              prowadzenia statystyk, jeżeli użytkownik wyrazi zgodę na
+              stosowanie odpowiednich narzędzi analitycznych.
             </li>
           </ul>
+        </section>
 
-          <p className={styles.placeholder}>
-            [DO WERYFIKACJI: przyporządkować każdemu celowi właściwą podstawę
-            prawną z art. 6 RODO, zgodnie z faktycznym sposobem działania
-            serwisu.]
+        <section className={styles.section}>
+          <h2>3. Podstawy prawne przetwarzania</h2>
+          <p>
+            Dane osobowe są przetwarzane na podstawie odpowiedniej przesłanki
+            określonej w art. 6 ust. 1 RODO:
+          </p>
+          <ul>
+            <li>
+              <strong>art. 6 ust. 1 lit. b RODO</strong> – gdy przetwarzanie
+              jest niezbędne do podjęcia działań na żądanie osoby przed
+              zawarciem umowy lub do wykonania umowy;
+            </li>
+            <li>
+              <strong>art. 6 ust. 1 lit. c RODO</strong> – gdy przetwarzanie
+              jest niezbędne do wypełnienia obowiązków prawnych ciążących
+              na administratorze, w szczególności obowiązków podatkowych
+              i rachunkowych;
+            </li>
+            <li>
+              <strong>art. 6 ust. 1 lit. f RODO</strong> – gdy przetwarzanie
+              jest niezbędne do realizacji prawnie uzasadnionych interesów
+              administratora, takich jak obsługa ogólnych zapytań,
+              zapewnienie bezpieczeństwa strony lub ustalenie, dochodzenie
+              albo obrona roszczeń;
+            </li>
+            <li>
+              <strong>art. 6 ust. 1 lit. a RODO</strong> – gdy przetwarzanie
+              odbywa się na podstawie zgody, na przykład w przypadku
+              opcjonalnych narzędzi analitycznych, jeżeli zostaną
+              uruchomione.
+            </li>
+          </ul>
+        </section>
+
+        <section className={styles.section}>
+          <h2>4. Formularz kontaktowy i korespondencja</h2>
+          <p>
+            Jeżeli użytkownik korzysta z formularza kontaktowego, może
+            przekazać w nim dane potrzebne do udzielenia odpowiedzi,
+            w szczególności imię i nazwisko, adres e-mail, numer telefonu
+            oraz treść wiadomości. Podanie danych oznaczonych w formularzu
+            jako wymagane jest konieczne do jego wysłania i obsługi
+            zapytania. Podanie pozostałych informacji jest dobrowolne.
+          </p>
+          <p>
+            Wiadomości z formularza są przekazywane administratorowi
+            pocztą elektroniczną. Do obsługi korespondencji administrator
+            korzysta z Gmail, usługi poczty elektronicznej dostarczanej
+            przez Google.
+          </p>
+          <p>
+            Dane z ogólnych zapytań, które nie prowadzą do zawarcia umowy
+            ani rozpoczęcia mediacji, są przechowywane przez 12 miesięcy
+            od zakończenia korespondencji. Po tym czasie są usuwane lub
+            anonimizowane, chyba że dalsze przechowywanie jest niezbędne
+            do ustalenia, dochodzenia lub obrony roszczeń albo wynika
+            z obowiązku prawnego.
           </p>
         </section>
 
         <section className={styles.section}>
-          <h2>3. Formularz kontaktowy</h2>
-
+          <h2>5. Odbiorcy danych</h2>
           <p>
-            Za pośrednictwem formularza kontaktowego użytkownik może
-            przekazać dane potrzebne do nawiązania kontaktu, w szczególności
-            imię i nazwisko, adres e-mail, numer telefonu oraz treść
-            wiadomości.
+            Odbiorcami danych mogą być dostawcy usług, z których administrator
+            korzysta w celu prowadzenia strony i obsługi korespondencji,
+            a także podmioty uprawnione do otrzymania danych na podstawie
+            przepisów prawa.
           </p>
-
+          <ul>
+            <li>
+              <strong>Homecloud</strong> – dostawca infrastruktury serwera
+              dedykowanego, na którym utrzymywana jest strona internetowa;
+            </li>
+            <li>
+              <strong>Google</strong> – dostawca usługi Gmail wykorzystywanej
+              do obsługi korespondencji oraz usługi Google Maps służącej
+              do wyświetlania mapy na stronie.
+            </li>
+          </ul>
           <p>
-            Podanie danych oznaczonych jako wymagane jest potrzebne do
-            obsługi wiadomości. Pozostałe dane należy podawać dobrowolnie,
-            w zakresie niezbędnym do nawiązania kontaktu.
-          </p>
-
-          <p>
-            Dane z formularza będą wykorzystywane do obsługi zapytania
-            i prowadzenia związanej z nim korespondencji.
-          </p>
-
-          <p className={styles.placeholder}>
-            [DO UZUPEŁNIENIA: wskazać sposób wysyłki formularza, dostawcę
-            poczty elektronicznej oraz okres przechowywania wiadomości.]
+            Dostęp do danych mogą mieć również osoby upoważnione przez
+            administratora, jeżeli jest to niezbędne do obsługi sprawy
+            lub zapewnienia prawidłowego działania strony. Dane są
+            udostępniane wyłącznie w zakresie potrzebnym do realizacji
+            danego celu.
           </p>
         </section>
 
         <section className={styles.section}>
-          <h2>4. Odbiorcy danych</h2>
-
+          <h2>6. Przekazywanie danych poza Europejski Obszar Gospodarczy</h2>
           <p>
-            Dostęp do danych mogą mieć podmioty wspierające administratora
-            w utrzymaniu i obsłudze strony, poczty elektronicznej lub
-            infrastruktury informatycznej — w zakresie niezbędnym do
-            świadczenia tych usług.
-          </p>
-
-          <p>
-            Dane mogą być również udostępniane uprawnionym organom, jeżeli
-            obowiązek taki wynika z przepisów prawa.
-          </p>
-
-          <p className={styles.placeholder}>
-            [DO UZUPEŁNIENIA: wskazać rzeczywistych dostawców hostingu,
-            poczty i innych usług.]
+            W związku z korzystaniem z usług Google, w szczególności Gmail
+            i Google Maps, dane mogą być przetwarzane także poza Europejskim
+            Obszarem Gospodarczym. W takim przypadku przekazywanie danych
+            odbywa się z zastosowaniem mechanizmów przewidzianych w RODO,
+            zależnie od usługi i okoliczności transferu. Informacje o
+            stosowanych zabezpieczeniach Google udostępnia w dokumentacji
+            dotyczącej ochrony danych i warunkach właściwych dla danej usługi.
           </p>
         </section>
 
         <section className={styles.section}>
-          <h2>5. Przekazywanie danych poza EOG</h2>
-
-          <p>
-            Korzystanie z niektórych usług zewnętrznych może wiązać się
-            z przekazywaniem danych do państw spoza Europejskiego Obszaru
-            Gospodarczego.
-          </p>
-
-          <p className={styles.placeholder}>
-            [DO WERYFIKACJI: ustalić, czy używane usługi przekazują dane
-            poza EOG, a jeśli tak — wskazać odpowiednie zabezpieczenia.]
-          </p>
-        </section>
-
-        <section className={styles.section}>
-          <h2>6. Okres przechowywania danych</h2>
-
+          <h2>7. Okres przechowywania danych</h2>
           <p>
             Dane są przechowywane przez okres niezbędny do realizacji celu,
-            w jakim zostały zebrane, z uwzględnieniem obowiązujących
-            przepisów oraz ewentualnych terminów przedawnienia roszczeń.
+            w jakim zostały zebrane:
           </p>
-
-          <p className={styles.placeholder}>
-            [DO UZUPEŁNIENIA: określić okresy przechowywania wiadomości
-            i dokumentacji.]
-          </p>
+          <ul>
+            <li>
+              dane z ogólnych zapytań – przez 12 miesięcy od zakończenia
+              korespondencji, z zastrzeżeniem sytuacji, w których dalsze
+              przechowywanie jest wymagane prawem lub potrzebne do ochrony
+              roszczeń;
+            </li>
+            <li>
+              dane związane z zawartą umową, rozliczeniami lub dokumentacją
+              mediacji – przez okres wynikający z właściwych przepisów
+              prawa lub do upływu odpowiednich terminów przedawnienia
+              roszczeń;
+            </li>
+            <li>
+              dane techniczne i logi serwera – przez okres potrzebny do
+              zapewnienia bezpieczeństwa, diagnostyki i prawidłowego
+              działania strony, zgodnie z konfiguracją infrastruktury.
+            </li>
+          </ul>
         </section>
 
         <section className={styles.section}>
-          <h2>7. Prawa osób, których dane dotyczą</h2>
-
+          <h2>8. Prawa osób, których dane dotyczą</h2>
           <p>
-            W granicach określonych przez przepisy RODO użytkownik może
-            mieć prawo do:
+            W granicach określonych przez RODO użytkownikowi przysługuje
+            prawo do:
           </p>
-
           <ul>
-            <li>dostępu do swoich danych;</li>
-            <li>sprostowania nieprawidłowych danych;</li>
+            <li>dostępu do danych osobowych;</li>
+            <li>sprostowania danych;</li>
             <li>usunięcia danych;</li>
             <li>ograniczenia przetwarzania;</li>
             <li>przenoszenia danych, jeżeli ma to zastosowanie;</li>
-            <li>wniesienia sprzeciwu, gdy prawo to przysługuje;</li>
+            <li>wniesienia sprzeciwu, jeżeli podstawą przetwarzania jest art. 6 ust. 1 lit. f RODO;</li>
             <li>
-              wycofania zgody w dowolnym momencie, jeżeli przetwarzanie
-              odbywa się na jej podstawie.
+              wycofania zgody w dowolnym momencie, jeżeli dane są
+              przetwarzane na podstawie zgody.
             </li>
           </ul>
-
           <p>
             Wycofanie zgody nie wpływa na zgodność z prawem przetwarzania,
             którego dokonano przed jej wycofaniem.
           </p>
-
           <p>
             Użytkownik ma również prawo wniesienia skargi do Prezesa Urzędu
             Ochrony Danych Osobowych.
@@ -239,54 +257,40 @@ export default function PrivacyPolicyPage() {
         </section>
 
         <section className={styles.section}>
-          <h2>8. Pliki cookies i technologie zewnętrzne</h2>
-
+          <h2>9. Pliki cookies i usługi zewnętrzne</h2>
           <p>
-            Strona może wykorzystywać niezbędne pliki cookies oraz,
-            po uzyskaniu wymaganej zgody, technologie analityczne
-            i zewnętrzne.
-          </p>
-
-          <p>
-            Szczegółowe informacje znajdują się w{" "}
+            Strona zapisuje w pamięci lokalnej przeglądarki wybór użytkownika
+            dotyczący zgód. Mapa Google jest ładowana po wyrażeniu zgody
+            na technologie zewnętrzne. Szczegółowe informacje o tych
+            mechanizmach znajdują się w{" "}
             <a href="/polityka-cookies">Polityce cookies</a>.
           </p>
-
           <p>
-            Integracja Google Analytics 4 przez Google Tag Manager jest
-            przygotowana do uruchomienia po skonfigurowaniu kontenera.
-            Narzędzie będzie uruchamiane wyłącznie po wyrażeniu zgody
-            na kategorię analityczną. Mapa Google jest uruchamiana po zgodzie
-            na technologie zewnętrzne.
+            Strona nie korzysta obecnie z Google Analytics 4 do prowadzenia
+            statystyk odwiedzin.
           </p>
         </section>
 
         <section className={styles.section}>
-          <h2>9. Bezpieczeństwo danych</h2>
-
+          <h2>10. Bezpieczeństwo danych</h2>
           <p>
-            Administrator powinien stosować środki techniczne i
-            organizacyjne odpowiednie do ryzyka, aby chronić dane przed
-            nieuprawnionym dostępem, utratą, zniszczeniem lub zmianą.
-          </p>
-
-          <p className={styles.placeholder}>
-            [DO WERYFIKACJI: opisać środki bezpieczeństwa faktycznie
-            stosowane przy obsłudze strony, formularza i poczty.]
+            Administrator stosuje odpowiednie środki techniczne i
+            organizacyjne, aby chronić dane osobowe przed nieuprawnionym
+            dostępem, utratą, zniszczeniem lub nieuprawnioną zmianą.
+            Dostęp do danych jest ograniczony do osób, które potrzebują
+            go do realizacji swoich obowiązków. Dane są przechowywane
+            z wykorzystaniem infrastruktury serwerowej dostawcy hostingu.
           </p>
         </section>
 
         <section className={styles.section}>
-          <h2>10. Zmiany polityki prywatności</h2>
-
+          <h2>11. Zmiany polityki prywatności</h2>
           <p>
             Polityka prywatności może być aktualizowana w przypadku zmian
-            przepisów, sposobu działania strony lub wykorzystywanych usług.
+            przepisów prawa, sposobu działania strony lub wykorzystywanych
+            usług. Aktualna wersja dokumentu jest publikowana na tej stronie.
           </p>
-
-          <p className={styles.placeholder}>
-            [DO UZUPEŁNIENIA: data obowiązywania dokumentu.]
-          </p>
+          <p>Ostatnia aktualizacja: 18 listopada 2026 r.</p>
         </section>
       </article>
     </main>

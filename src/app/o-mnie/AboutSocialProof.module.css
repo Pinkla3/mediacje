@@ -1,3 +1,4 @@
+
 .credentialsPartners {
   padding: 66px clamp(24px, 5vw, 76px) 72px;
   background: #fbf6ee;
@@ -12,7 +13,9 @@
   margin: 0 auto;
 }
 
-.column { min-width: 0; }
+.column {
+  min-width: 0;
+}
 
 .columnDivider {
   display: block;
@@ -84,17 +87,20 @@
 
 .certificateCard {
   display: flex;
-  min-height: 142px;
+  min-height: 224px;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 8px;
   padding: 18px 20px;
   border: 1px solid #e5d8c3;
   background: #fffdf9;
   color: #111827;
   text-decoration: none;
-  transition: border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+  transition:
+    border-color 180ms ease,
+    transform 180ms ease,
+    box-shadow 180ms ease;
 }
 
 .certificateCard:hover {
@@ -107,6 +113,7 @@
   display: inline-flex;
   width: 34px;
   height: 34px;
+  flex-shrink: 0;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
@@ -114,31 +121,80 @@
   color: #a9782d;
   font-size: 10px;
   font-weight: 700;
-  letter-spacing: .5px;
+  letter-spacing: 0.5px;
 }
 
 .certificateTitle {
+  color: #111827;
   font-family: Georgia, "Times New Roman", serif;
   font-size: 18px;
+  line-height: 1.35;
 }
 
-.certificateAction { color: #9c702e; font-size: 12px; }
+.certificateDescription {
+  color: #697080;
+  font-size: 12px;
+  line-height: 1.55;
+}
 
-.partnerPlaceholder {
+.certificateDate {
+  color: #9c702e;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.certificateAction {
+  margin-top: auto;
+  color: #9c702e;
+  font-size: 12px;
+}
+
+.partnerGrid {
+  align-items: stretch;
+}
+
+.partnerLogoCard {
   display: flex;
   min-height: 142px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 12px;
+  padding: 20px;
   border: 1px solid #e5d8c3;
   background: #fffdf9;
-  color: #697080;
-  font-size: 11px;
-  letter-spacing: 1.1px;
+  text-decoration: none;
+  transition:
+    border-color 180ms ease,
+    transform 180ms ease,
+    box-shadow 180ms ease;
 }
 
-.partnerMark { color: #c89a4b; font-size: 28px; }
+.partnerLogoCard:hover {
+  border-color: #c89a4b;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgb(17 24 39 / 7%);
+}
+
+.partnerLogoCard img {
+  display: block;
+  width: 100%;
+  max-width: 190px;
+  height: 65px;
+  object-fit: contain;
+}
+
+.partnerLink {
+  color: #9c702e;
+  font-size: 12px;
+  text-align: center;
+}
+
+.partnerLogoCard:focus-visible,
+.certificateCard:focus-visible {
+  outline: 2px solid #a9782d;
+  outline-offset: 4px;
+}
 
 .testimonials {
   /* Sekcja opinii ma zajmować około 90% wysokości okna przeglądarki. */
@@ -194,7 +250,9 @@
   cursor: grab;
 }
 
-.viewport:active { cursor: grabbing; }
+.viewport:active {
+  cursor: grabbing;
+}
 
 .track {
   display: flex;
@@ -220,7 +278,7 @@
   color: #c89a4b;
   font-family: Georgia, "Times New Roman", serif;
   font-size: 68px;
-  line-height: .65;
+  line-height: 0.65;
 }
 
 .review p {
@@ -232,7 +290,11 @@
   line-height: 1.55;
 }
 
-.reviewRule { width: 72px; height: 2px; background: #c89a4b; }
+.reviewRule {
+  width: 72px;
+  height: 2px;
+  background: #c89a4b;
+}
 
 .review strong {
   margin-top: 18px;
@@ -241,7 +303,11 @@
   font-weight: 600;
 }
 
-.reviewRole { margin-top: 4px; color: #a9782d; font-size: 14px; }
+.reviewRole {
+  margin-top: 4px;
+  color: #a9782d;
+  font-size: 14px;
+}
 
 .controls {
   display: flex;
@@ -266,9 +332,16 @@
   transition: background 160ms ease, color 160ms ease;
 }
 
-.controls > button:hover { background: #c89a4b; color: white; }
+.controls > button:hover {
+  background: #c89a4b;
+  color: white;
+}
 
-.dots { display: flex; align-items: center; gap: 9px; }
+.dots {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
 
 .dots button {
   width: 9px;
@@ -280,31 +353,121 @@
   cursor: pointer;
 }
 
-.dots button.activeDot { width: 24px; border-radius: 10px; background: #c89a4b; }
+.dots button.activeDot {
+  width: 24px;
+  border-radius: 10px;
+  background: #c89a4b;
+}
 
 @media (max-width: 820px) {
-  .columns { grid-template-columns: 1fr; gap: 38px; }
-  .columnDivider { width: 100%; min-height: 1px; }
-  .credentialsPartners { padding: 54px 22px; }
-  .testimonials { min-height: 90vh; min-height: 90svh; padding: 30px 22px; }
-  .reviewCard { grid-template-columns: minmax(220px, .8fr) minmax(0, 1.2fr); height: clamp(280px, 48vh, 380px); min-height: 280px; }
-  .reviewPhoto, .reviewPhoto img, .track, .review { min-height: 0; }
-  .review { padding: 26px 24px; }
+  .columns {
+    grid-template-columns: 1fr;
+    gap: 38px;
+  }
+
+  .columnDivider {
+    width: 100%;
+    min-height: 1px;
+  }
+
+  .credentialsPartners {
+    padding: 54px 22px;
+  }
+
+  .testimonials {
+    min-height: 90vh;
+    min-height: 90svh;
+    padding: 30px 22px;
+  }
+
+  .reviewCard {
+    grid-template-columns: minmax(220px, .8fr) minmax(0, 1.2fr);
+    height: clamp(280px, 48vh, 380px);
+    min-height: 280px;
+  }
+
+  .reviewPhoto,
+  .reviewPhoto img,
+  .track,
+  .review {
+    min-height: 0;
+  }
+
+  .review {
+    padding: 26px 24px;
+  }
 }
 
 @media (max-width: 560px) {
-  .testimonials { min-height: auto; padding: 42px 20px 48px; }
-  .reviewCard { grid-template-columns: 1fr; height: auto; min-height: 0; }
-  .reviewPhoto { min-height: 210px; max-height: 210px; }
-  .reviewPhoto img { min-height: 210px; max-height: 210px; }
-  .track, .review { min-height: 280px; }
-  .review { padding: 28px 24px 32px; }
-  .review p { margin: 16px 0 20px; font-size: 20px; }
-  .certificateGrid, .partnerGrid { gap: 9px; }
-  .certificateCard, .partnerPlaceholder { min-height: 128px; padding: 14px; }
-  .certificateTitle { font-size: 16px; }
+  .testimonials {
+    min-height: auto;
+    padding: 42px 20px 48px;
+  }
+
+  .reviewCard {
+    grid-template-columns: 1fr;
+    height: auto;
+    min-height: 0;
+  }
+
+  .reviewPhoto {
+    min-height: 210px;
+    max-height: 210px;
+  }
+
+  .reviewPhoto img {
+    min-height: 210px;
+    max-height: 210px;
+  }
+
+  .track,
+  .review {
+    min-height: 280px;
+  }
+
+  .review {
+    padding: 28px 24px 32px;
+  }
+
+  .review p {
+    margin: 16px 0 20px;
+    font-size: 20px;
+  }
+
+  .certificateGrid,
+  .partnerGrid {
+    gap: 9px;
+  }
+
+  .certificateCard {
+    min-height: 205px;
+    padding: 14px;
+  }
+
+  .partnerLogoCard {
+    min-height: 128px;
+    padding: 14px 10px;
+  }
+
+  .partnerLogoCard img {
+    max-width: 150px;
+    height: 55px;
+  }
+
+  .certificateTitle {
+    font-size: 16px;
+  }
+
+  .certificateDescription {
+    font-size: 11px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .track, .certificateCard, .controls > button { transition: none; }
+  .track,
+  .certificateCard,
+  .partnerLogoCard,
+  .controls > button {
+    transition: none;
+  }
 }

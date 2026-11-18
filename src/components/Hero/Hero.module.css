@@ -343,3 +343,13 @@
   min-height: 320px;
 }
 }
+@media (max-width: 700px) {
+  .imageWrapper {
+    display: none;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+}

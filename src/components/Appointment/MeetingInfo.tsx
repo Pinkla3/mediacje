@@ -6,7 +6,7 @@ import styles from "./MeetingInfo.module.css";
 const meetingOptions = [
   {
     title: "Stacjonarnie",
-    description: "W komfortowej przestrzeni w Szczecinie.",
+    description: "ul. Krzywoustego 69/5, 70-313 Szczecin – po wcześniejszym ustaleniu terminu.",
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <path d="M3 10.5 12 3l9 7.5" />
@@ -16,7 +16,7 @@ const meetingOptions = [
   },
   {
     title: "Online",
-    description: "Za pośrednictwem bezpiecznego połączenia wideo.",
+    description: "Za pośrednictwem połączenia wideo.",
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <rect x="3" y="5" width="13" height="14" rx="1" />
@@ -25,8 +25,8 @@ const meetingOptions = [
     ),
   },
   {
-    title: "Elastyczne terminy",
-    description: "Możliwe wieczorami lub w wybrane dni weekendu.",
+    title: "Termin spotkania",
+    description: "Ustalany indywidualnie po kontakcie.",
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <rect x="3" y="5" width="18" height="16" rx="1" />
@@ -37,7 +37,7 @@ const meetingOptions = [
 ];
 
 const googleMapsUrl =
-  "https://www.google.com/maps/search/?api=1&query=Szczecin";
+  "https://www.google.com/maps/search/?api=1&query=ul.+Krzywoustego+69%2F5%2C+70-313+Szczecin";
 
 type ConsentSettings = {
   external?: boolean;
@@ -96,13 +96,13 @@ export default function MeetingInfo() {
         href={googleMapsUrl}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Otwórz mapę Szczecina w Google Maps"
+        aria-label="Otwórz mapę adresu ul. Krzywoustego 69/5 w Szczecinie w Google Maps"
       >
         {externalConsent ? (
           <iframe
             className={styles.map}
-            title="Mapa Szczecina"
-            src="https://www.google.com/maps?q=Szczecin&output=embed"
+            title="Mapa adresu ul. Krzywoustego 69/5 w Szczecinie"
+            src="https://www.google.com/maps?q=ul.+Krzywoustego+69%2F5%2C+70-313+Szczecin&z=13&output=embed"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
             tabIndex={-1}
@@ -111,9 +111,13 @@ export default function MeetingInfo() {
         ) : (
           <span className={styles.mapConsentNotice}>
             Mapa Google zostanie wyświetlona po wyrażeniu zgody na technologie
-            zewnętrzne. Możesz też otworzyć ją bezpośrednio w Google Maps.
+            zewnętrzne. Możesz też otworzyć mapę lokalizacji bezpośrednio w Google Maps.
           </span>
         )}
+
+        <span className={styles.mapAddressLabel}>
+          ul. Krzywoustego 69/5, 70-313 Szczecin
+        </span>
 
         <span className={styles.mapOverlay}>
           Otwórz w Google Maps <span aria-hidden="true">↗</span>

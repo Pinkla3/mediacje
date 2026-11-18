@@ -1,3 +1,4 @@
+
 .backdrop {
   position: fixed;
   inset: 0;
@@ -139,21 +140,6 @@
   background: var(--cream-dark, #eee6d8);
 }
 
-.reopen {
-  position: fixed;
-  z-index: 9998;
-  right: 16px;
-  bottom: 58px;
-  padding: 10px 14px;
-  border: 1px solid var(--gold, #c89a4b);
-  background: var(--cream, #f8f5ef);
-  color: var(--navy, #111827);
-  font-family: inherit;
-  font-size: 12px;
-  cursor: pointer;
-  box-shadow: 0 2px 12px rgb(0 0 0 / 10%);
-}
-
 @media (max-width: 600px) {
   .backdrop {
     padding: 12px;
@@ -174,10 +160,5 @@
 
   .preference {
     align-items: flex-start;
-  }
-
-  .reopen {
-    right: 10px;
-    bottom: 52px;
   }
 }

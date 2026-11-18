@@ -51,7 +51,9 @@ export default function Header() {
           <Link href="/blog">Blog</Link>
         </nav>
 
-      <AppointmentButton />
+        <div className={styles.desktopAppointment}>
+          <AppointmentButton />
+        </div>
 
         <button
           type="button"
@@ -84,7 +86,9 @@ export default function Header() {
           Blog
         </Link>
 
-<AppointmentButton />
+        <div className={styles.mobileAppointment}>
+          <AppointmentButton />
+        </div>
       </nav>
     </header>
   );

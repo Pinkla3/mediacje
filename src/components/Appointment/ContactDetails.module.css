@@ -133,10 +133,11 @@
   font-size: 13px;
   line-height: 1.7;
   overflow-wrap: anywhere;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 a.value {
-  text-decoration: none;
   transition: color 0.2s ease;
 }
 

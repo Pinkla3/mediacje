@@ -808,3 +808,18 @@
     animation: none;
   }
 }
+
+@media (max-width: 768px) {
+  /* Ukryj cały obszar zdjęcia, aby nie zostawało puste beżowe pole */
+  .heroImageWrapper {
+    display: none !important;
+  }
+
+  .heroImage {
+    display: none !important;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+  }
+}

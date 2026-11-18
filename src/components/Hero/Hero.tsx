@@ -16,8 +16,7 @@ export default function Hero() {
 
         <p className={styles.description}>
           Pomagam stronom znaleźć porozumienie w sposób spokojny,
-          dyskretny i dostosowany do ich potrzeb. Mediacja to realna
-          alternatywa dla długotrwałych sporów sądowych.
+          dyskretny i dostosowany do ich potrzeb.
         </p>
 
         <div className={styles.actions}>

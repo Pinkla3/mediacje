@@ -47,8 +47,8 @@ export default function MediationScope() {
               <h3>MEDIACJE RODZINNE</h3>
 
               <p>
-                Rozwody, alimenty, kontakty z dziećmi,
-                podział majątku.
+                Rozwody, alimenty, kontakty z dziećmi, podział majątku
+                oraz ustalenie zasad opieki nad zwierzętami.
               </p>
 
               <a
@@ -83,7 +83,7 @@ export default function MediationScope() {
               <h3>MEDIACJE CYWILNE</h3>
 
               <p>
-                Spory sąsiedzkie, umowy,
+                Spory sąsiedzkie, nieudane zakupy, umowy, odszkodowania,
                 roszczenia majątkowe.
               </p>
 
@@ -161,8 +161,8 @@ export default function MediationScope() {
               <h3>MEDIACJE GOSPODARCZE</h3>
 
               <p>
-                Spory między firmami, konflikty w umowach,
-                rozliczenia i warunki współpracy.
+               Niewłaściwe wykonanie umów, w tym umów na tle budowlanym i transportowym,
+rozliczenia i warunki współpracy B2B, nieporozumienia między zarządem a wspólnikami.
               </p>
 
               <a

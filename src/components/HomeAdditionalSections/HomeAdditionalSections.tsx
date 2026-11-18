@@ -37,7 +37,7 @@ const facts = [
   },
   {
     number: "07",
-    title: "To Ty współdecydujesz",
+    title: "To Ty współ\u00ADdecydujesz",
     text: "W mediacji masz wpływ na sposób rozwiązania konfliktu i możesz współtworzyć porozumienie.",
   },
   {
@@ -221,16 +221,42 @@ function ReviewCarousel() {
   );
 }
 
-function PartnerLogoPlaceholder() {
+const partners = [
+  {
+    name: "KOZLOWSKI Rechts- und Steuerberatung",
+    logo: "/images/partners/kozlowski.png",
+    href: "https://www.kozlowski.legal/walczakiewicz-beata",
+    description: "Profil Beaty Walczakiewicz na stronie kancelarii KOZLOWSKI",
+  },
+  {
+    name: "Okręgowa Izba Radców Prawnych w Szczecinie",
+    logo: "/images/partners/oirp-szczecin.png",
+    href: "https://oirp.szczecin.pl/listy/lista-radcow/",
+    description: "Lista radców prawnych OIRP w Szczecinie",
+  },
+  {
+    name: "Sąd Okręgowy w Szczecinie",
+    logo: "/images/partners/sad-okregowy-szczecin.png",
+    href: "https://szczecin.so.gov.pl/lista-mediatorow-w-sprawach-cywilnych-oraz-osrodkow-mediacyjnych,m,m1,213,275",
+    description: "Lista mediatorów i ośrodków mediacyjnych Sądu Okręgowego w Szczecinie",
+  },
+];
+
+function PartnerLogoCard({ partner }: { partner: (typeof partners)[number] }) {
   return (
-    <div className={styles.logoPlaceholder}>
-      <svg viewBox="0 0 72 48" aria-hidden="true">
-        <path d="M36 40C24 34 20 23 25 12c6 2 10 7 11 14 1-7 5-12 11-14 5 11 1 22-11 28Z" />
-        <path d="M36 40C20 41 10 32 10 21c8-1 16 3 21 11M36 40c16 1 26-8 26-19-8-1-16 3-21 11" />
-        <path d="M36 40V15" />
-      </svg>
-      <span>LOGOTYP</span>
-    </div>
+    <a
+      className={styles.logoPlaceholder}
+      href={partner.href}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={partner.description}
+      title={partner.description}
+    >
+      <img src={partner.logo} alt={partner.name} loading="lazy" />
+      <span className={styles.partnerLink}>
+        Zobacz stronę <span aria-hidden="true">↗</span>
+      </span>
+    </a>
   );
 }
 
@@ -272,7 +298,7 @@ export default function HomeAdditionalSections() {
 </div>
       </section>
 
-      <section className={styles.reviewsPartnersSection} aria-label="Opinie i partnerzy">
+      <section className={styles.reviewsPartnersSection} aria-label="Opinie i współpraca">
         <div className={styles.reviewsPartnersGrid}>
           <div className={styles.testimonialsSection} aria-labelledby="testimonials-heading">
             <div className={styles.sectionHeader}>
@@ -289,13 +315,17 @@ export default function HomeAdditionalSections() {
           <div className={styles.cooperationSection} aria-labelledby="cooperation-heading">
             <div className={styles.sectionHeader}>
               <div className={styles.sectionEyebrow}>
-                <span className={styles.eyebrow}>PARTNERZY</span>
+                <span className={styles.eyebrow}>WSPÓŁPRACA</span>
               </div>
               <h2 id="cooperation-heading">Współpracuję z:</h2>
+              <span className={styles.headingRule} aria-hidden="true" />
+              <p className={styles.cooperationIntro}>
+                Współpracuję z instytucjami i kancelariami, z którymi łączą mnie wspólne wartości i profesjonalne podejście do wykonywanej pracy.
+              </p>
             </div>
             <div className={styles.logosGrid}>
-              {[1, 2, 3, 4].map((item) => (
-                <PartnerLogoPlaceholder key={item} />
+              {partners.map((partner) => (
+                <PartnerLogoCard key={partner.name} partner={partner} />
               ))}
             </div>
           </div>

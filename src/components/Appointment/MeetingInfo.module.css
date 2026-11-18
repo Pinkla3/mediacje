@@ -148,6 +148,21 @@
   pointer-events: none;
 }
 
+.mapAddressLabel {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 2;
+  max-width: calc(100% - 28px);
+  padding: 10px 14px;
+  background: var(--white);
+  color: var(--navy);
+  font-size: 13px;
+  line-height: 1.4;
+  box-shadow: 0 2px 12px rgb(0 0 0 / 12%);
+  pointer-events: none;
+}
+
 .mapOverlay {
   position: absolute;
   right: 14px;

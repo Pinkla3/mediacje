@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useEffect, useState } from "react";
@@ -24,32 +25,28 @@ export default function CookieConsent() {
     useState<ConsentSettings>(defaultSettings);
 
   useEffect(() => {
-    // Odczyt localStorage odkładamy do klatki renderowania po hydracji,
-    // aby zachować zgodność SSR i uniknąć synchronicznej aktualizacji stanu w efekcie.
-    const frame = window.requestAnimationFrame(() => {
-      const savedConsent = localStorage.getItem(STORAGE_KEY);
+    const savedConsent = localStorage.getItem(STORAGE_KEY);
 
-      if (savedConsent) {
-        try {
-          const parsed = JSON.parse(savedConsent) as ConsentSettings;
+    if (savedConsent) {
+      try {
+        const parsed = JSON.parse(savedConsent) as ConsentSettings;
 
-          // Zachowujemy zgodę na analitykę z wcześniejszych wersji panelu,
-          // jeśli użytkownik rzeczywiście ją wcześniej wybrał.
-          setSettings({
-            necessary: true,
-            analytics: parsed.analytics === true,
-            external: parsed.external === true,
-          });
-        } catch {
-          localStorage.removeItem(STORAGE_KEY);
-          setVisible(true);
-        }
-      } else {
+        setSettings({
+          necessary: true,
+          analytics: parsed.analytics === true,
+          external: parsed.external === true,
+        });
+
+        // Użytkownik już dokonał wyboru — nie pokazujemy panelu.
+        setVisible(false);
+      } catch {
+        localStorage.removeItem(STORAGE_KEY);
         setVisible(true);
       }
-    });
-
-    return () => window.cancelAnimationFrame(frame);
+    } else {
+      // Pierwsza wizyta — pokazujemy panel.
+      setVisible(true);
+    }
   }, []);
 
   function saveConsent(consent: ConsentSettings) {
@@ -121,17 +118,9 @@ export default function CookieConsent() {
     };
   }, []);
 
+  // Po zapisaniu wyboru panel całkowicie znika.
   if (!visible) {
-    return (
-      <button
-        type="button"
-        className={styles.reopen}
-        onClick={openSettings}
-        aria-label="Otwórz ustawienia cookies"
-      >
-        Ustawienia cookies
-      </button>
-    );
+    return null;
   }
 
   return (
@@ -166,7 +155,9 @@ export default function CookieConsent() {
                 <strong>Niezbędne</strong>
                 <p>Zapewniają podstawowe działanie strony.</p>
               </div>
-              <span className={styles.alwaysActive}>Zawsze aktywne</span>
+              <span className={styles.alwaysActive}>
+                Zawsze aktywne
+              </span>
             </div>
 
             <label className={styles.preference}>

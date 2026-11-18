@@ -3,8 +3,9 @@ import styles from "./ContactDetails.module.css";
 const contactItems = [
   {
     title: "Telefon",
-    description: "+48 123 456 789",
-    extra: "Pon. – Pt. 9:00 – 17:00",
+    description: "+48 669 422 091",
+    extra: "Skontaktuj się telefonicznie.",
+    href: "tel:+48669422091",
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <path d="M6.6 3.5h3l1.5 4.2-2 1.5a14 14 0 0 0 5.7 5.7l1.5-2 4.2 1.5v3c0 1.1-.9 2-2 2A15.5 15.5 0 0 1 4.6 5.5c0-1.1.9-2 2-2Z" />
@@ -13,8 +14,9 @@ const contactItems = [
   },
   {
     title: "E-mail",
-    description: "kontakt@mediacje.pl",
-    extra: "Odpowiadam w ciągu 24 godzin.",
+    description: "b.walczakiewicz@gmail.com",
+    extra: "Napisz, a odpowiem na Twoją wiadomość.",
+    href: "mailto:b.walczakiewicz@gmail.com",
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <rect x="3.5" y="5.5" width="17" height="13" rx="1" />
@@ -23,14 +25,36 @@ const contactItems = [
     ),
   },
   {
-    title: "Adres",
-    description: "ul. Przykładowa 12/3",
-    extra: "70-001 Szczecin",
-    note: "Spotkania stacjonarne i online",
+    title: "Adres działalności",
+    description: "ul. Krzywoustego 69/5, 70-313 Szczecin",
+    extra: "Spotkania stacjonarne po wcześniejszym ustaleniu terminu.",
+    note: "Możliwa jest również mediacja online.",
+    href: "https://www.google.com/maps/search/?api=1&query=ul.+Krzywoustego+69%2F5%2C+70-313+Szczecin",
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z" />
         <circle cx="12" cy="10" r="2.5" />
+      </svg>
+    ),
+  },
+  {
+    title: "NIP",
+    name:" Legal and Art Support Radca Prawny i Mediator Beata Walczakiewicz",
+    description: "8513142092",
+    extra: "REGON: 521151684",
+  note: (
+    <>
+      Adres do doręczeń:
+      <br />
+      ul. Orawska 23/45,
+      <br />
+      70-131 Szczecin
+    </>
+  ),
+    icon: (
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <rect x="4" y="3" width="16" height="18" rx="1" />
+        <path d="M8 8h8M8 12h8M8 16h4" />
       </svg>
     ),
   },
@@ -54,7 +78,6 @@ export default function ContactDetails() {
       <span className={styles.eyebrow}>DANE KONTAKTOWE</span>
 
       <h2 id="contact-heading">Zapraszam do kontaktu</h2>
-
       <p className={styles.intro}>
         Jeśli rozważasz mediację, masz pytania dotyczące procesu lub
         chcesz umówić spotkanie – skontaktuj się ze mną w dogodny
@@ -70,17 +93,28 @@ export default function ContactDetails() {
 
             <div className={styles.details}>
               <h3>{item.title}</h3>
-              <p>{item.description}</p>
-              <p>{item.extra}</p>
-              {"note" in item && item.note && (
-                <p>{item.note}</p>
-              )}
 
-              {"href" in item && item.href && (
-                <a href={item.href} className={styles.link}>
-                  Przejdź do formularza →
+              {item.href ? (
+                <a
+                  className={styles.value}
+                  href={item.href}
+                  target={item.href.startsWith("https://") ? "_blank" : undefined}
+                  rel={item.href.startsWith("https://") ? "noopener noreferrer" : undefined}
+                >
+                  {item.description}
+                  {item.href === "#formularz" && (
+                    <span aria-hidden="true"> →</span>
+                  )}
                 </a>
+              ) : (
+                <span className={styles.value}>{item.description}</span>
+                
               )}
+{"name" in item && item.name && (
+  <p>{item.name}</p>
+)}
+              <p>{item.extra}</p>
+              {"note" in item && item.note && <p>{item.note}</p>}
             </div>
           </div>
         ))}

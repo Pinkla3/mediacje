@@ -24,18 +24,31 @@
 .legal {
   display: flex;
   align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 20px;
 }
 
-.legal a {
+.legal a,
+.cookieSettings {
   color: #d7d9de;
+  font-family: inherit;
   font-size: 11px;
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
-.legal a:hover {
+.legal a:hover,
+.cookieSettings:hover {
   color: #d6b574;
+}
+
+.cookieSettings {
+  display: inline-block;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
 }
 
 .author {
@@ -87,5 +100,10 @@
   .bottom {
     flex-direction: column;
     gap: 14px;
+  }
+
+  .legal {
+    flex-direction: column;
+    gap: 12px;
   }
 }

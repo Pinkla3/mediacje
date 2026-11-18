@@ -125,3 +125,15 @@
     padding: 56px 24px;
   }
 }
+
+/* Na urządzeniach mobilnych hero bez zdjęcia */
+@media (max-width: 768px) {
+  .heroImage {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .heroImage {
+    display: none;
+  }
+}

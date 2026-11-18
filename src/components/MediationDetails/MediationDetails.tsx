@@ -29,6 +29,12 @@ const mediationAreas = [
           "Ustalenie planu opieki, sposobu kontaktów i ważnych spraw wychowawczych.",
       },
       {
+        icon: "heart",
+        title: "Opieka nad zwierzętami",
+        description:
+          "Ustalenie, z kim pozostanie zwierzę po rozstaniu, zasad opieki, kontaktów oraz podziału kosztów jego utrzymania.",
+      },
+      {
         icon: "document",
         title: "Alimenty",
         description:
@@ -71,9 +77,9 @@ const mediationAreas = [
       },
       {
         icon: "document",
-        title: "Umowy i zobowiązania",
+        title: "Umowy, zobowiązania i nieudane zakupy",
         description:
-          "Niewykonanie lub nienależyte wykonanie umów, spory o zapłatę.",
+          "Niewykonanie lub nienależyte wykonanie umów, spory o zapłatę oraz problemy związane z nieudanymi zakupami i reklamacjami.",
       },
       {
         icon: "money",
@@ -167,7 +173,7 @@ const mediationAreas = [
         icon: "document",
         title: "Spory między firmami",
         description:
-          "Niewykonanie umowy, opóźnienia i jakość realizacji usług.",
+          "Niewykonanie lub nienależyte wykonanie umów, opóźnienia i jakość realizacji usług, w tym sporów na tle umów budowlanych i transportowych.",
       },
       {
         icon: "document",
@@ -183,9 +189,9 @@ const mediationAreas = [
       },
       {
         icon: "family",
-        title: "Warunki współpracy",
+        title: "Spory między zarządem a wspólnikami",
         description:
-          "Ustalenie zasad dalszej współpracy i zmiana warunków.",
+          "Nieporozumienia dotyczące kierunku działania firmy, podziału obowiązków, podejmowania decyzji i zasad współpracy.",
       },
       {
         icon: "handshake",

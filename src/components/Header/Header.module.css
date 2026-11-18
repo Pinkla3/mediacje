@@ -1,8 +1,13 @@
+
 .header {
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
   background-color: var(--cream);
   border-bottom: 1px solid var(--border);
 }
+
+/* Główny kontener nagłówka */
 
 .container {
   width: calc(100% - 64px);
@@ -15,6 +20,8 @@
   justify-content: space-between;
   gap: 36px;
 }
+
+/* Logo */
 
 .logo {
   display: flex;
@@ -64,6 +71,8 @@
   white-space: nowrap;
 }
 
+/* Nawigacja desktopowa */
+
 .navigation {
   display: flex;
   align-items: center;
@@ -73,19 +82,9 @@
 
 .navigation a {
   position: relative;
-  color: #343944;
-  font-size: 14px;
-  font-weight: 400;
-  transition: color 0.2s ease;
-}
-
-.navigation a {
-  position: relative;
-
   color: var(--navy);
   font-size: 14px;
   font-weight: 500;
-
   transition: color 0.2s ease;
 }
 
@@ -93,75 +92,37 @@
   color: var(--gold-dark);
 }
 
-.appointmentButton {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
+/* Przycisk umawiania spotkania */
+
+.desktopAppointment {
+  display: flex;
   flex-shrink: 0;
-
-  padding: 16px 24px;
-
-  background-color: var(--gold);
-  color: var(--white);
-
-  font-size: 12px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.7px;
-
-  transition:
-    background-color 0.2s ease,
-    transform 0.2s ease;
 }
 
-.appointmentButton:hover {
-  background-color: var(--gold-dark);
-  transform: translateY(-1px);
-}
-
-.appointmentButton span {
-  font-size: 18px;
-}
+/* Przycisk menu mobilnego */
 
 .menuButton {
   display: none;
-
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  padding: 0;
   border: 0;
   background: transparent;
   color: var(--navy);
-
-  font-size: 26px;
-  padding: 5px;
+  font-size: 28px;
+  line-height: 1;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Tablet */
-
-@media (max-width: 900px) {
-  .container {
-  width: calc(100% - 36px);
-  gap: 18px;
-}
-  .navigation {
-    gap: 18px;
-  }
-
-  .navigation a {
-    font-size: 12px;
-  }
-
-  .appointmentButton {
-    padding: 12px 16px;
-    font-size: 11px;
-  }
-}
-
-
-/* Telefon */
+/* Menu mobilne - domyślnie ukryte */
 
 .mobileNavigation {
   display: none;
 }
+
+/* Tablet */
 
 @media (max-width: 900px) {
   .container {
@@ -176,26 +137,48 @@
   .navigation a {
     font-size: 12px;
   }
-
-  .appointmentButton {
-    padding: 12px 16px;
-    font-size: 11px;
-  }
 }
 
+/* Telefon */
+
 @media (max-width: 700px) {
+  .header {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow-x: clip;
+  }
+
   .container {
-    width: calc(100% - 32px);
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
     min-height: 68px;
+    padding: 0 16px;
+    margin: 0;
+    box-sizing: border-box;
+    gap: 8px;
   }
 
   .navigation,
-  .appointmentButton {
+  .desktopAppointment {
     display: none;
   }
 
-  .menuButton {
-    display: block;
+  .logo {
+    flex: 1 1 auto;
+    min-width: 0;
+    gap: 8px;
+  }
+
+  .logoIcon {
+    flex: 0 0 42px;
+    width: 42px;
+    height: 42px;
+  }
+
+  .logoText {
+    min-width: 0;
   }
 
   .logoText strong {
@@ -203,91 +186,77 @@
   }
 
   .logoText small {
-    font-size: 7px;
+    font-size: 6px;
+    letter-spacing: 1.3px;
   }
 
-  .logoIcon {
-    width: 46px;
-    height: 46px;
+  .menuButton {
+    display: inline-flex;
+    flex: 0 0 44px;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
   }
 
-.mobileNavigation {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  padding: 8px 24px 20px;
-  background: var(--cream);
-  border-top: 1px solid var(--border);
+  /* Rozwijane menu */
 
-  max-height: 0;
-  overflow: hidden;
-  padding-top: 0;
-  padding-bottom: 0;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-12px);
+  .mobileNavigation {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+    max-width: 100%;
+    max-height: 0;
+    padding: 0 16px;
+    box-sizing: border-box;
+    overflow: hidden;
+    background: var(--cream);
+    border-top: 1px solid transparent;
+    opacity: 0;
+    visibility: hidden;
 
-transition:
-  max-height 0.6s ease-in-out,
-  padding 0.6s ease-in-out,
-  opacity 0.4s ease,
-  transform 0.6s ease-in-out,
-  visibility 0.6s ease-in-out;
-}
+    transition:
+      max-height 0.35s ease,
+      padding 0.35s ease,
+      opacity 0.25s ease,
+      visibility 0.25s ease;
+  }
 
-.mobileNavigationOpen {
-  max-height: 400px;
-  padding-top: 8px;
-  padding-bottom: 20px;
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
+  .mobileNavigationOpen {
+    max-height: 400px;
+    padding: 8px 16px 20px;
+    border-top-color: var(--border);
+    opacity: 1;
+    visibility: visible;
+  }
 
-.mobileNavigation a {
-  display: block;
-  padding: 14px 0;
-  color: var(--navy);
-  font-size: 15px;
-  line-height: 1.5;
-  text-decoration: none;
-  border-bottom: 1px solid var(--border);
-  transition: color 0.2s ease, background-color 0.2s ease;
-}
+  .mobileNavigation > a {
+    display: block;
+    padding: 14px 0;
+    color: var(--navy);
+    font-size: 15px;
+    line-height: 1.5;
+    text-decoration: none;
+    border-bottom: 1px solid var(--border);
+    transition: color 0.2s ease;
+  }
 
-.mobileNavigation a:hover {
-  color: var(--gold-dark);
-}
+  .mobileNavigation > a:hover {
+    color: var(--gold-dark);
+  }
 
+  /* Przycisk w rozwiniętym menu */
 
-.mobileNavigation .mobileAppointment {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  align-self: stretch;
-  box-sizing: border-box;
-  width: 100%;
-  gap: 12px;
+  .mobileAppointment {
+    width: 100%;
+    margin-top: 16px;
+  }
 
-  margin-top: 16px;
-  padding: 14px 18px;
-
-  background-color: var(--gold);
-  color: var(--white);
-  border-bottom: none;
-
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-
-  transition:
-    background-color 0.25s ease,
-    transform 0.25s ease;
-}
-
-.mobileNavigation .mobileAppointment:hover {
-  background-color: var(--gold-dark);
-  color: var(--white);
-}
+  .mobileAppointment :global(button) {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
 }

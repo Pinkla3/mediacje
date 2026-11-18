@@ -214,3 +214,40 @@ padding-left: 40px;
     gap: 22px;
   }
 }
+@media (max-width: 760px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  /* Nagłówek sekcji – do lewej */
+  .content {
+    width: 100%;
+    text-align: left;
+  }
+
+  .eyebrow {
+    justify-content: flex-start;
+  }
+
+  .content h2 {
+    text-align: left;
+  }
+
+  .description {
+    margin-left: 0;
+    margin-right: 0;
+    text-align: left;
+  }
+
+  /* Korzyści – wyśrodkowane */
+  .benefit {
+    align-items: center;
+    text-align: center;
+  }
+
+  .benefit h3,
+  .benefit p {
+    text-align: center;
+  }
+}
