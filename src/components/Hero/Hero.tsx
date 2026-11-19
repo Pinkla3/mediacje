@@ -16,7 +16,7 @@ export default function Hero() {
 
         <p className={styles.description}>
           Pomagam stronom znaleźć porozumienie w sposób spokojny,
-          dyskretny i dostosowany do ich potrzeb.
+          dyskretny i dostosowany do ich potrzeb. Także zdalnie. 
         </p>
 
         <div className={styles.actions}>
